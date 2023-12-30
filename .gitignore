@@ -9,6 +9,7 @@
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/**/usage.statistics.xml
+.idea/**/vcs.xml
 .idea/**/dictionaries
 .idea/**/shelf
 
@@ -114,4 +115,4 @@ fabric.properties
 # https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij
 .idea/**/azureSettings.xml
 
-# End of https://www.toptal.com/developers/gitignore/api/intellij
+# End of https://www.toptal.com/developers/gitignore/api/intellijvcs.xml
