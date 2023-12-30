@@ -1,0 +1,139 @@
+  # dashboard git:(master) ✗ kc get no docker-desktop -o yaml
+  apiVersion: v1
+  kind: Node
+  metadata:
+    annotations:
+      kubeadm.alpha.kubernetes.io/cri-socket: unix:///var/run/cri-dockerd.sock
+      node.alpha.kubernetes.io/ttl: "0"
+      volumes.kubernetes.io/controller-managed-attach-detach: "true"
+    creationTimestamp: "2023-12-29T13:04:18Z"
+    labels:
+      beta.kubernetes.io/arch: arm64
+      beta.kubernetes.io/os: linux
+      kubernetes.io/arch: arm64
+      kubernetes.io/hostname: docker-desktop
+      kubernetes.io/os: linux
+      node-role.kubernetes.io/control-plane: ""
+      node.kubernetes.io/exclude-from-external-load-balancers: ""
+    name: docker-desktop
+    resourceVersion: "27225"
+    uid: be5f2dca-f6ee-40da-a7f2-198250dc3674
+  spec: {}
+  status:
+    addresses:
+      - address: 192.168.65.3
+        type: InternalIP
+      - address: docker-desktop
+        type: Hostname
+    allocatable:
+      cpu: "8"
+      ephemeral-storage: "56403987978"
+      hugepages-1Gi: "0"
+      hugepages-2Mi: "0"
+      hugepages-32Mi: "0"
+      hugepages-64Ki: "0"
+      memory: 7930588Ki
+      pods: "110"
+    capacity:
+      cpu: "8"
+      ephemeral-storage: 61202244Ki
+      hugepages-1Gi: "0"
+      hugepages-2Mi: "0"
+      hugepages-32Mi: "0"
+      hugepages-64Ki: "0"
+      memory: 8032988Ki
+      pods: "110"
+    conditions:
+      - lastHeartbeatTime: "2023-12-29T22:55:06Z"
+        lastTransitionTime: "2023-12-29T13:04:17Z"
+        message: kubelet has sufficient memory available
+        reason: KubeletHasSufficientMemory
+        status: "False"
+        type: MemoryPressure
+      - lastHeartbeatTime: "2023-12-29T22:55:06Z"
+        lastTransitionTime: "2023-12-29T13:04:17Z"
+        message: kubelet has no disk pressure
+        reason: KubeletHasNoDiskPressure
+        status: "False"
+        type: DiskPressure
+      - lastHeartbeatTime: "2023-12-29T22:55:06Z"
+        lastTransitionTime: "2023-12-29T13:04:17Z"
+        message: kubelet has sufficient PID available
+        reason: KubeletHasSufficientPID
+        status: "False"
+        type: PIDPressure
+      - lastHeartbeatTime: "2023-12-29T22:55:06Z"
+        lastTransitionTime: "2023-12-29T13:04:18Z"
+        message: kubelet is posting ready status
+        reason: KubeletReady
+        status: "True"
+        type: Ready
+    daemonEndpoints:
+      kubeletEndpoint:
+        Port: 10250
+    images:
+      - names:
+          - luksa/kiada@sha256:f47dac8541512e04c75c2a620bbaa29070425e13b1d9213813da525dd38ee3ef
+          - luksa/kiada:0.1
+        sizeBytes: 905063039
+      - names:
+          - hubproxy.docker.internal:5555/docker/desktop-kubernetes@sha256:56c0d46255e05ebc9a5d62abe3ba49f4274222bff434690414a43e58866b882c
+          - hubproxy.docker.internal:5555/docker/desktop-kubernetes:kubernetes-v1.28.2-cni-v1.3.0-critools-v1.28.0-cri-dockerd-v0.3.4-1-debian
+        sizeBytes: 411090594
+      - names:
+          - joedoe/tatort-screening-finder:24
+        sizeBytes: 326268004
+      - names:
+          - kubernetesui/dashboard@sha256:2e500d29e9d5f4a086b908eb8dfe7ecac57d2ab09d65b24f588b1d449841ef93
+          - kubernetesui/dashboard:v2.7.0
+        sizeBytes: 244042622
+      - names:
+          - registry.k8s.io/etcd:3.5.7-0
+        sizeBytes: 180928685
+      - names:
+          - registry.k8s.io/etcd@sha256:e013d0d5e4e25d00c61a7ff839927a1f36479678f11e49502b53a5e0b14f10c3
+          - registry.k8s.io/etcd:3.5.9-0
+        sizeBytes: 180769590
+      - names:
+          - registry.k8s.io/kube-apiserver:v1.28.2
+        sizeBytes: 119629626
+      - names:
+          - registry.k8s.io/kube-controller-manager:v1.28.2
+        sizeBytes: 115763339
+      - names:
+          - registry.k8s.io/kube-proxy:v1.28.2
+        sizeBytes: 68326881
+      - names:
+          - registry.k8s.io/kube-scheduler:v1.28.2
+        sizeBytes: 57763992
+      - names:
+          - registry.k8s.io/coredns/coredns:v1.10.1
+        sizeBytes: 51383929
+      - names:
+          - kubernetesui/metrics-scraper@sha256:76049887f07a0476dc93efc2d3569b9529bf982b22d29f356092ce206e98765c
+          - kubernetesui/metrics-scraper:v1.0.8
+        sizeBytes: 42255013
+      - names:
+          - docker/desktop-storage-provisioner:v2.0
+        sizeBytes: 39816902
+      - names:
+          - docker/desktop-vpnkit-controller:dc331cb22850be0cdd97c84a9cfecaf44a1afb6e
+        sizeBytes: 34992760
+      - names:
+          - alpine@sha256:51b67269f354137895d43f3b3d810bfacd3945438e94dc5ac55fdac340352f48
+          - alpine:latest
+        sizeBytes: 7728526
+      - names:
+          - registry.k8s.io/pause:3.9
+        sizeBytes: 514000
+    nodeInfo:
+      architecture: arm64
+      bootID: 1e186aca-0d33-4ddc-ad17-1494a576b608
+      containerRuntimeVersion: docker://24.0.6
+      kernelVersion: 6.4.16-linuxkit
+      kubeProxyVersion: v1.28.2
+      kubeletVersion: v1.28.2
+      machineID: 0a99374a-a5a2-4c83-a212-6452112426a6
+      operatingSystem: linux
+      osImage: Docker Desktop
+      systemUUID: 0a99374a-a5a2-4c83-a212-6452112426a6
