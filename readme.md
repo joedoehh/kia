@@ -71,3 +71,9 @@ Defaulting container name to kiada.
 Use 'kubectl describe pod/kiada -n default' to see all of the containers in this pod.
 If you don't see a command prompt, try pressing enter.
 ```
+### general housekeeping
+
+```
+kc delete pods --all  
+kc delete all --all
+```
