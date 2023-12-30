@@ -1,6 +1,6 @@
 # Kubernetes In Action
 
-## interacting with a pod
+## 5: interacting with a pod
 
 ### connect to a pod (from a one-off client pod inside the cluster)
 
@@ -66,7 +66,7 @@ $ kubectl exec -it POD-NAME -- bash
 ### attaching to a running container
 
 ```
-$ kubectl attach POD-NAME
+$ kc attach POD-NAME
 Defaulting container name to kiada.
 Use 'kubectl describe pod/kiada -n default' to see all of the containers in this pod.
 If you don't see a command prompt, try pressing enter.
