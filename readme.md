@@ -60,20 +60,54 @@ root  120  0.0  0.1  17500  2128 ?   Rs   12:22 0:00 ps aux
 
 $ kubectl exec POD-NAME -- curl -s localhost:8080
 
-$ kubectl exec -it POD-NAME -- bash
+$ kubectl exec -it POD-NAME -c CONTAINER-NAME -- bash
 ```
 
 ### attaching to a running container
 
 ```
-$ kc attach POD-NAME
-Defaulting container name to kiada.
-Use 'kubectl describe pod/kiada -n default' to see all of the containers in this pod.
-If you don't see a command prompt, try pressing enter.
+kc attach POD-NAME [-c CONTAINER-NAME]
+
+kc attach pod/[POD_ID] (-n namespace)
+
+kc exec -it (-n namespace) [POD_ID] -- sh
 ```
+
 ### general housekeeping
 
 ```
 kc delete pods --all  
 kc delete all --all
+```
+
+## connectivity
+
+https://medium.com/@the_good_guy/get-shell-access-to-pods-nodes-in-kubernetes-using-kubectl-1d8fc10e89eb
+
+### open shell in a running pod/container
+
+```
+kubectl exec -it <pod-name> -- bash
+kubectl exec -it <pod-name> -c <container-name> -- bash
+```
+
+### open shell to a node
+
+```
+kubectl debug node/<node-name> -it --image=<image name>
+
+kubectl debug node/<node-name> -it --image=ubuntu
+kubectl debug node/<node-name> -it --image=alpine
+```
+
+use docker to get into the VM hosting kubernetes
+
+```
+docker run -it --privileged --pid=host debian nsenter -t 1 -m -u -n -i sh
+```
+
+filesystem: look up UUID of pod 
+
+```
+/var/lib/kubelet/pods/dd5cdc8c-3ff9-49f1-ab4e-893f08a7b2b3/volumes
 ```
